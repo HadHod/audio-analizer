@@ -3,8 +3,11 @@
 (function (window) {
 
 	var audio = null;
+	var userMedia = null;
 
-	function AudioAnalizer () {}
+	function AudioAnalizer () {
+		userMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
+	}
 
 	AudioAnalizer.prototype.record = function () {
 		console.log('recording');
